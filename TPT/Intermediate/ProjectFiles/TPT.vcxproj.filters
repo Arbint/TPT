@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\TPT.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F2384268-5DFA-4B24-B880-1B20724BCE16}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\TPT.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\TPTEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{3D362ABB-E217-4CAB-9C36-570E6ADB2053}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\TPT">
+      <UniqueIdentifier>{BD1EE323-B55C-4F56-B8EC-7C9DC2F786C1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TPT\AntiGravityVolume.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\AntiGravityVolume.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Clock.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Clock.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\CStaticMeshActor.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\CStaticMeshActor.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\C_PlayerController.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\C_PlayerController.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\DelegateListener.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\DelegateListener.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\DoolBell.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\DoolBell.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Door.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Door.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\EventListener.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\EventListener.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\GravityObject.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\GravityObject.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\InventoryActor.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\InventoryActor.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\InventoryComponent.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\InventoryComponent.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\MulticastDelegateListener.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\MulticastDelegateListener.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\MyGameMode.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\MyGameMode.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\MyMeshComponent.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\MyMeshComponent.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\NoneNativeClass.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\NoneNativeClass.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\OribitingComponent.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\OribitingComponent.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\ParamDelegateListener.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\ParamDelegateListener.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\PhysicsCube.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\PhysicsCube.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\PickupActor.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\PickupActor.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\PickUpActorWithChannel.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\PickUpActorWithChannel.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\PickupSpawner.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\PickupSpawner.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\RandomMovmentComponent.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\RandomMovmentComponent.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\SingleInterfaceActor.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\SingleInterfaceActor.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\SpawnerComponent.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\SpawnerComponent.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\TestingActor.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\TestingActor.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\TestInterface.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\TestInterface.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\TileType.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\TileType.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\TimeOfTheDayHandler.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\TimeOfTheDayHandler.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\TPT\TPT.Build.cs">
+      <Filter>Source\TPT</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\TPT\TPT.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\TPT.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\TPTCharacter.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\TPTCharacter.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\TPTGameMode.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\TPTGameMode.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Tree.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Tree.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\TriggerActor.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\TriggerActor.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\UniversalFunctions.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\UniversalFunctions.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Warrior.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Warrior.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Weapon_Base.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Weapon_Base.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\WorriedEathen.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\WorriedEathen.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+    <Filter Include="Source\TPT\Chap8">
+      <UniqueIdentifier>{C1B24AD5-17BC-47ED-BD13-6D650425EE82}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TPT\Chap8\BaseEnemy.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\BaseEnemy.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\BasicDefinedStaticMeshActor.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\BasicDefinedStaticMeshActor.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\BlueprintPropertyActor.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\BlueprintPropertyActor.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\King.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\King.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\MyStaticMeshActor.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\MyStaticMeshActor.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\OnConstructionActor.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\OnConstructionActor.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\Peasant.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\Peasant.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\PorpertySpecifiedActor.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\PorpertySpecifiedActor.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\PostEditChangePropertyActor.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\PostEditChangePropertyActor.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\SlidingDoor.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\SlidingDoor.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Chap8\Spotter.cpp">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Chap8\Spotter.h">
+      <Filter>Source\TPT\Chap8</Filter>
+    </ClInclude>
+    <Filter Include="Source\TPT\Interactable">
+      <UniqueIdentifier>{4B334DAF-8B5C-427E-8491-732781369E4D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TPT\Interactable\IFInteractable.cpp">
+      <Filter>Source\TPT\Interactable</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Interactable\IFInteractable.h">
+      <Filter>Source\TPT\Interactable</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TPT\Interactable\Openable.cpp">
+      <Filter>Source\TPT\Interactable</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Interactable\Openable.h">
+      <Filter>Source\TPT\Interactable</Filter>
+    </ClInclude>
+    <Filter Include="Source\TPT\Interfaces">
+      <UniqueIdentifier>{66FE8E47-CB1D-4850-A8A2-1B041F76984E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TPT\Interfaces\Talker.cpp">
+      <Filter>Source\TPT\Interfaces</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPT\Interfaces\Talker.h">
+      <Filter>Source\TPT\Interfaces</Filter>
+    </ClInclude>
+    <Filter Include="Source\TPTEditor">
+      <UniqueIdentifier>{694B6D98-84A0-4331-B535-D457409551A5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\TPTEditor\TPTEditor.Build.cs">
+      <Filter>Source\TPTEditor</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\TPTEditor\TPTEditor.cpp">
+      <Filter>Source\TPTEditor</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TPTEditor\TPTEditor.h">
+      <Filter>Source\TPTEditor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source\TPT\experimental">
+      <UniqueIdentifier>{f54deb54-9147-41f3-9c4a-8dfa21f7494e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\TPT\experimental\MyInpulseActor.h">
+      <Filter>Source\TPT\experimental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TPT\CustomHud.h">
+      <Filter>Source\TPT</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\TPT\experimental\MyInpulseActor.cpp">
+      <Filter>Source\TPT\experimental</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TPT\CustomHud.cpp">
+      <Filter>Source\TPT</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
