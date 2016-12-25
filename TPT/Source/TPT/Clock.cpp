@@ -37,6 +37,7 @@ void AClock::BeginPlay()
 		ATimeOfTheDayHandler* TimeOfDayHandler = Cast<ATimeOfTheDayHandler>(TimeOfDayHandlers[0]);
 		MyDelegateHandle = TimeOfDayHandler->OnTimeChanged.AddUObject(this, &AClock::TimeChanged);
 	}
+	PC = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
 }
 
 // Called every frame

@@ -22,9 +22,11 @@ void AC_PlayerController::BeginPlay()
 	PossessedWorrior = SpawnWarrior(DefaultWorrior);
 	Possess(PossessedWorrior);
 
-	TSharedRef<SVerticalBox> widget = SNew(SVerticalBox) + SVerticalBox::Slot()
-	.HAlign(HAlign_Center)
-	.VAlign(VAlign_Center)
+	//create a new sverticalBox using a shared reference because it is defined this way.
+	TSharedRef<SVerticalBox> widget = SNew(SVerticalBox) + SVerticalBox::Slot()//give it a slot
+	.HAlign(HAlign_Center)//set the slot to be centered horizontally
+	.VAlign(VAlign_Center)//set the slot to be centered vertically
+		//using square brackets, we create a button that has textblock inside it
 		[
 			SNew(SButton).Content()
 			[
