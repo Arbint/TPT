@@ -13,6 +13,22 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define TPT_Source_TPT_MyGameMode_h_25_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetButtonLabel) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(FText*)Z_Param__Result=this->GetButtonLabel(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execcreateClickableButton) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->createClickableButton(); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execcreateBlinkingButtion) \
 	{ \
 		P_FINISH; \
@@ -23,6 +39,22 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define TPT_Source_TPT_MyGameMode_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetButtonLabel) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(FText*)Z_Param__Result=this->GetButtonLabel(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execcreateClickableButton) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->createClickableButton(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execcreateBlinkingButtion) \
 	{ \

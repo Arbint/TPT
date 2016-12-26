@@ -21,17 +21,7 @@ AMyGameMode::AMyGameMode()
 void AMyGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	Widget = SNew(SVerticalBox) + SVerticalBox::Slot().HAlign(HAlign_Center).VAlign(VAlign_Center)
-		[
-			SNew(SButton).Content()
-			[
-				SNew(STextBlock).Text(TAttribute<FText>::Create(TAttribute<FText>::FGetter::CreateUObject(this, &AMyGameMode::GetButtonLabel)))
-			]
-		];
-	if (GEngine)
-	{
-		GEngine->GameViewport->AddViewportWidgetForPlayer(GetWorld()->GetFirstLocalPlayerFromController(), Widget.ToSharedRef(), 1);
-	}
+	CreateAButtonShowsPlayerPosition();
 }
 
 void AMyGameMode::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -117,5 +107,36 @@ FText AMyGameMode::GetButtonLabel() const
 {
 	FVector ActorLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
 	return FText::FromString(FString::Printf(TEXT("%f, %f, %f"), ActorLocation.X, ActorLocation.Y, ActorLocation.Z));
+}
+
+void AMyGameMode::CreateAButtonShowsPlayerPosition()
+{
+	Widget = SNew(SVerticalBox) + SVerticalBox::Slot().HAlign(HAlign_Center).VAlign(VAlign_Center)
+		[
+			SNew(SButton).Content()
+			[
+				//this looks complicated, but what it is doing is comparatively simple, we assign a TAttribute<FText> to the text property
+				//the reason we use TAttribute<FText> instead of just a FText, is because TAttribute<typename T> have a Get() member that can be called to
+				//update the value it contains. so the textblock will actually call AmyGameMode::GetbuttonLabel() every frame to update it's Text attribute.
+
+				//To create a TAttribute, we need to call the staitc member TAttribute<typename T>::Create(), which expects a delegate type of your choice. depending on 
+				//the type of delegate passed to TAttribute::Create, TAttribute::Get() invokes a different type of function to retrive the vaule to update.
+
+				//in the definition of TAttribute:
+				/*template <typename ObjectType>
+				class TAttribute
+				{
+				public:
+				DECLARE_DELEGATE_RetVal(ObjectType, FGetter);
+				}
+				*/
+				// the FGetter Delegate type is declared inside the TAttribute class, so it's return value can be templated on the ObjectType parameter of the TAttribute template
+				SNew(STextBlock).Text(TAttribute<FText>::Create(TAttribute<FText>::FGetter::CreateUObject(this, &AMyGameMode::GetButtonLabel)))
+			]
+		];
+	if (GEngine)
+	{
+		GEngine->GameViewport->AddViewportWidgetForPlayer(GetWorld()->GetFirstLocalPlayerFromController(), Widget.ToSharedRef(), 1);
+	}
 }
 

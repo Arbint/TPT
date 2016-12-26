@@ -51,7 +51,7 @@ public:
 	UPROPERTY()
 		FTimerHandle HUDToggleTimer;
 
-
+//Multiple ways of creating buttons.
 	UFUNCTION()
 		void createBlinkingButtion();
 
@@ -66,4 +66,7 @@ public:
 
 	UFUNCTION()
 		FText GetButtonLabel() const;
+
+	UFUNCTION()
+		void CreateAButtonShowsPlayerPosition();
 };
