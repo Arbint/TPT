@@ -61,4 +61,9 @@ private:
 
 public:
 	FReply ButtonClicked();
+	UFUNCTION()
+		void createClickableButton();
+
+	UFUNCTION()
+		FText GetButtonLabel() const;
 };

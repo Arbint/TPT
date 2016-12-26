@@ -23,21 +23,14 @@ void AMyGameMode::BeginPlay()
 	Super::BeginPlay();
 	Widget = SNew(SVerticalBox) + SVerticalBox::Slot().HAlign(HAlign_Center).VAlign(VAlign_Center)
 		[
-			SNew(SButton).OnClicked(FOnClicked::CreateUObject(this, &AMyGameMode::ButtonClicked))
-			.Content()
+			SNew(SButton).Content()
 			[
-				SAssignNew(ButtonLabel, STextBlock).Text(FText::FromString(TEXT("Click me!")))
+				SNew(STextBlock).Text(TAttribute<FText>::Create(TAttribute<FText>::FGetter::CreateUObject(this, &AMyGameMode::GetButtonLabel)))
 			]
 		];
-
 	if (GEngine)
 	{
 		GEngine->GameViewport->AddViewportWidgetForPlayer(GetWorld()->GetFirstLocalPlayerFromController(), Widget.ToSharedRef(), 1);
-	}
-	GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
-	if (GEngine)
-	{
-		GEngine->GetFirstLocalPlayerController(GetWorld())->SetInputMode(FInputModeUIOnly().SetLockMouseToViewport(false).SetWidgetToFocus(Widget));
 	}
 }
 
@@ -96,5 +89,33 @@ FReply AMyGameMode::ButtonClicked()
 {
 	ButtonLabel->SetText(FString(TEXT("Clicked")));
 	return FReply::Handled();
+}
+
+void AMyGameMode::createClickableButton()
+{
+	Widget = SNew(SVerticalBox) + SVerticalBox::Slot().HAlign(HAlign_Center).VAlign(VAlign_Center)
+		[
+			SNew(SButton).OnClicked(FOnClicked::CreateUObject(this, &AMyGameMode::ButtonClicked))
+			.Content()
+		[
+			SAssignNew(ButtonLabel, STextBlock).Text(FText::FromString(TEXT("Click me!")))
+		]
+		];
+
+	if (GEngine)
+	{
+		GEngine->GameViewport->AddViewportWidgetForPlayer(GetWorld()->GetFirstLocalPlayerFromController(), Widget.ToSharedRef(), 1);
+	}
+	GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
+	if (GEngine)
+	{
+		GEngine->GetFirstLocalPlayerController(GetWorld())->SetInputMode(FInputModeUIOnly().SetLockMouseToViewport(false).SetWidgetToFocus(Widget));
+	}
+}
+
+FText AMyGameMode::GetButtonLabel() const
+{
+	FVector ActorLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+	return FText::FromString(FString::Printf(TEXT("%f, %f, %f"), ActorLocation.X, ActorLocation.Y, ActorLocation.Z));
 }
 
