@@ -14,6 +14,14 @@ class ACharacter;
 
 #define TPT_Source_TPT_C_PlayerController_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execcreateButton) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->createButton(); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execIsPlayerRotated) \
 	{ \
 		P_FINISH; \
@@ -134,6 +142,14 @@ class ACharacter;
 
 
 #define TPT_Source_TPT_C_PlayerController_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execcreateButton) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->createButton(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execIsPlayerRotated) \
 	{ \

@@ -22,21 +22,7 @@ void AC_PlayerController::BeginPlay()
 	PossessedWorrior = SpawnWarrior(DefaultWorrior);
 	Possess(PossessedWorrior);
 
-	//create a new sverticalBox using a shared reference because it is defined this way.
-	TSharedRef<SVerticalBox> widget = SNew(SVerticalBox) + SVerticalBox::Slot()//give it a slot
-	.HAlign(HAlign_Center)//set the slot to be centered horizontally
-	.VAlign(VAlign_Center)//set the slot to be centered vertically
-		//using square brackets, we create a button that has textblock inside it
-		[
-			SNew(SButton).Content()
-			[
-				SNew(STextBlock).Text(FText::FromString(TEXT("test button")))
-			]
-		];
-	if (GEngine)
-	{
-		GEngine->GameViewport->AddViewportWidgetForPlayer(GetLocalPlayer(), widget, 1);
-	}
+	
 
 }
 
@@ -182,5 +168,24 @@ bool AC_PlayerController::IsPlayerRotated()
 		return true;
 	}
 	return false;
+}
+
+void AC_PlayerController::createButton()
+{
+	//create a new sverticalBox using a shared reference because it is defined this way.
+	TSharedRef<SVerticalBox> widget = SNew(SVerticalBox) + SVerticalBox::Slot()//give it a slot
+		.HAlign(HAlign_Center)//set the slot to be centered horizontally
+		.VAlign(VAlign_Center)//set the slot to be centered vertically
+							  //using square brackets, we create a button that has textblock inside it
+		[
+			SNew(SButton).Content()
+			[
+				SNew(STextBlock).Text(FText::FromString(TEXT("test button")))
+			]
+		];
+	if (GEngine)
+	{
+		GEngine->GameViewport->AddViewportWidgetForPlayer(GetLocalPlayer(), widget, 1);
+	}
 }
 
