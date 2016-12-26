@@ -15,12 +15,39 @@ AMyGameMode::AMyGameMode()
 {
 	//HUDClass = ACustomHud::StaticClass();
 	PlayerControllerClass = AC_PlayerController::StaticClass();
+
 }
 
 void AMyGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	FindActorsUsingInerface();
+	Widget = SNew(SVerticalBox) + SVerticalBox::Slot().HAlign(HAlign_Center).VAlign(VAlign_Center)
+	[
+		SNew(SButton).Content()
+		[
+			SNew(STextBlock).Text(FText::FromString(TEXT("Test Button")))
+		]
+	];
+	GEngine->GameViewport->AddViewportWidgetForPlayer(GetWorld()->GetFirstLocalPlayerFromController(), Widget.ToSharedRef(), 1);
+	GetWorld()->GetTimerManager().SetTimer(HUDToggleTimer, FTimerDelegate::CreateLambda
+	([this] 
+	{
+		if (this->Widget->GetVisibility().IsVisible())
+		{
+			this->Widget->SetVisibility(EVisibility::Hidden);
+		}
+		else
+		{
+			this->Widget->SetVisibility(EVisibility::Visible);
+		}
+	})
+	, 5, true);
+}
+
+void AMyGameMode::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+	GetWorld()->GetTimerManager().ClearTimer(HUDToggleTimer);
 }
 
 void AMyGameMode::FindActorsUsingInerface()

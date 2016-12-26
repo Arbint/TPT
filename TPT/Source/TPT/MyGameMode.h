@@ -23,9 +23,12 @@ UCLASS()
 class TPT_API AMyGameMode : public AGameMode
 {
 	GENERATED_BODY()
-		AMyGameMode();
-		virtual void BeginPlay() override;
+		
+		
 public:
+	AMyGameMode();
+	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EEndPlayReason) override;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ActorToGenerate")
 		TSubclassOf<AWeapon_Base> weaponToGenerate;
 	
@@ -42,5 +45,11 @@ public:
 	UPROPERTY()
 		TArray<AActor*> MyInterfaceInstances;
 
+
 	void FindActorsUsingInerface();
+
+	UPROPERTY()
+		FTimerHandle HUDToggleTimer;
+	
+	TSharedPtr<SVerticalBox> Widget;
 };

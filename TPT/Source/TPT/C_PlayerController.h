@@ -69,7 +69,8 @@ public:
 	FInputActionKeyMapping SprintKey = FInputActionKeyMapping("Sprint", EKeys::LeftShift, 0, 0, 0, 0);
 
 
-
+	UFUNCTION()
+		void createButton();
 };
 
 

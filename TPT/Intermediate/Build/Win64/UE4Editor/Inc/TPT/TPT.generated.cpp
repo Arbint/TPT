@@ -40,6 +40,7 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 	void AC_PlayerController::StaticRegisterNativesAC_PlayerController()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AC_PlayerController::StaticClass(), "ChangeCharacter",(Native)&AC_PlayerController::execChangeCharacter);
+		FNativeFunctionRegistrar::RegisterFunction(AC_PlayerController::StaticClass(), "createButton",(Native)&AC_PlayerController::execcreateButton);
 		FNativeFunctionRegistrar::RegisterFunction(AC_PlayerController::StaticClass(), "Down",(Native)&AC_PlayerController::execDown);
 		FNativeFunctionRegistrar::RegisterFunction(AC_PlayerController::StaticClass(), "Interact",(Native)&AC_PlayerController::execInteract);
 		FNativeFunctionRegistrar::RegisterFunction(AC_PlayerController::StaticClass(), "IsPlayerMoved",(Native)&AC_PlayerController::execIsPlayerMoved);
@@ -54,7 +55,7 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 		FNativeFunctionRegistrar::RegisterFunction(AC_PlayerController::StaticClass(), "SpawnWarrior",(Native)&AC_PlayerController::execSpawnWarrior);
 		FNativeFunctionRegistrar::RegisterFunction(AC_PlayerController::StaticClass(), "Sprint",(Native)&AC_PlayerController::execSprint);
 	}
-	IMPLEMENT_CLASS(AC_PlayerController, 114110536);
+	IMPLEMENT_CLASS(AC_PlayerController, 4077417310);
 	void AClock::StaticRegisterNativesAClock()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AClock::StaticClass(), "TimeChanged",(Native)&AClock::execTimeChanged);
@@ -261,7 +262,7 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 	void AMyGameMode::StaticRegisterNativesAMyGameMode()
 	{
 	}
-	IMPLEMENT_CLASS(AMyGameMode, 612054517);
+	IMPLEMENT_CLASS(AMyGameMode, 3014843819);
 	void AMyInpulseActor::StaticRegisterNativesAMyInpulseActor()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AMyInpulseActor::StaticClass(), "Triggered",(Native)&AMyInpulseActor::execTriggered);
@@ -485,6 +486,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FTransform();
 	ENGINE_API class UClass* Z_Construct_UClass_UActorComponent();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FTimerHandle();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
@@ -515,6 +517,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	TPT_API class UClass* Z_Construct_UClass_ABlueprintPropertyActor_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_ABlueprintPropertyActor();
 	TPT_API class UFunction* Z_Construct_UFunction_AC_PlayerController_ChangeCharacter();
+	TPT_API class UFunction* Z_Construct_UFunction_AC_PlayerController_createButton();
 	TPT_API class UFunction* Z_Construct_UFunction_AC_PlayerController_Down();
 	TPT_API class UFunction* Z_Construct_UFunction_AC_PlayerController_Interact();
 	TPT_API class UFunction* Z_Construct_UFunction_AC_PlayerController_IsPlayerMoved();
@@ -893,6 +896,22 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_AC_PlayerController_createButton()
+	{
+		UObject* Outer=Z_Construct_UClass_AC_PlayerController();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("createButton"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("C_PlayerController.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_AC_PlayerController_Down()
 	{
 		struct C_PlayerController_eventDown_Parms
@@ -1163,6 +1182,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassFlags |= 0x20900284;
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AC_PlayerController_ChangeCharacter());
+				OuterClass->LinkChild(Z_Construct_UFunction_AC_PlayerController_createButton());
 				OuterClass->LinkChild(Z_Construct_UFunction_AC_PlayerController_Down());
 				OuterClass->LinkChild(Z_Construct_UFunction_AC_PlayerController_Interact());
 				OuterClass->LinkChild(Z_Construct_UFunction_AC_PlayerController_IsPlayerMoved());
@@ -1186,6 +1206,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_warriorTemplates_Inner = new(EC_InternalUseOnlyConstructor, NewProp_warriorTemplates, TEXT("warriorTemplates"), RF_Public|RF_Transient|RF_MarkAsNative) UClassProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0004000000000000, Z_Construct_UClass_ACharacter_NoRegister(), UClass::StaticClass());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AC_PlayerController_ChangeCharacter(), "ChangeCharacter"); // 499918926
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AC_PlayerController_createButton(), "createButton"); // 629222368
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AC_PlayerController_Down(), "Down"); // 177049638
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AC_PlayerController_Interact(), "Interact"); // 226475723
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AC_PlayerController_IsPlayerMoved(), "IsPlayerMoved"); // 3210121047
@@ -2328,6 +2349,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_HUDToggleTimer = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("HUDToggleTimer"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(HUDToggleTimer, AMyGameMode), 0x0010000000000000, Z_Construct_UScriptStruct_FTimerHandle());
 				UProperty* NewProp_MyInterfaceInstances = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MyInterfaceInstances"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(MyInterfaceInstances, AMyGameMode), 0x0010000000000000);
 				UProperty* NewProp_MyInterfaceInstances_Inner = new(EC_InternalUseOnlyConstructor, NewProp_MyInterfaceInstances, TEXT("MyInterfaceInstances"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000, Z_Construct_UClass_AActor_NoRegister());
 				UProperty* NewProp_SpawnedAxe = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpawnedAxe"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(SpawnedAxe, AMyGameMode), 0x0010000000000000, Z_Construct_UClass_AWeapon_Base_NoRegister());
@@ -2342,6 +2364,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("MyGameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("MyGameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_HUDToggleTimer, TEXT("ModuleRelativePath"), TEXT("MyGameMode.h"));
 				MetaData->SetValue(NewProp_MyInterfaceInstances, TEXT("ModuleRelativePath"), TEXT("MyGameMode.h"));
 				MetaData->SetValue(NewProp_SpawnedAxe, TEXT("ModuleRelativePath"), TEXT("MyGameMode.h"));
 				MetaData->SetValue(NewProp_defaultCharacterToSpawn, TEXT("Category"), TEXT("Defaults"));
@@ -4371,8 +4394,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/TPT")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x4B2E9D65;
-			Guid.B = 0x52DA2A08;
+			Guid.A = 0x01B4CD28;
+			Guid.B = 0xDDFE0116;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

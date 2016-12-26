@@ -1,4 +1,4 @@
-D:\Learnning\UE4\ThridPersonTest\TPT\Source\TPT\TPT.Build.cs
-D:\Learnning\UE4\ThridPersonTest\TPT\Source\TPTEditor\TPTEditor.Build.cs
-D:\Learnning\UE4\ThridPersonTest\TPT\Source\TPT.Target.cs
-D:\Learnning\UE4\ThridPersonTest\TPT\Source\TPTEditor.Target.cs
+D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPT\TPT.Build.cs
+D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPTEditor\TPTEditor.Build.cs
+D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPT.Target.cs
+D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPTEditor.Target.cs
