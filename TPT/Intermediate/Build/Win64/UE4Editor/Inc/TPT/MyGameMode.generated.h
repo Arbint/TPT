@@ -11,8 +11,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TPT_MyGameMode_generated_h
 
-#define TPT_Source_TPT_MyGameMode_h_25_RPC_WRAPPERS
-#define TPT_Source_TPT_MyGameMode_h_25_RPC_WRAPPERS_NO_PURE_DECLS
+#define TPT_Source_TPT_MyGameMode_h_25_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execcreateBlinkingButtion) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->createBlinkingButtion(); \
+		P_NATIVE_END; \
+	}
+
+
+#define TPT_Source_TPT_MyGameMode_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execcreateBlinkingButtion) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->createBlinkingButtion(); \
+		P_NATIVE_END; \
+	}
+
+
 #define TPT_Source_TPT_MyGameMode_h_25_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAMyGameMode(); \

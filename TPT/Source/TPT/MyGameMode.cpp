@@ -22,26 +22,23 @@ void AMyGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 	Widget = SNew(SVerticalBox) + SVerticalBox::Slot().HAlign(HAlign_Center).VAlign(VAlign_Center)
-	[
-		SNew(SButton).Content()
 		[
-			SNew(STextBlock).Text(FText::FromString(TEXT("Test Button")))
-		]
-	];
-	GEngine->GameViewport->AddViewportWidgetForPlayer(GetWorld()->GetFirstLocalPlayerFromController(), Widget.ToSharedRef(), 1);
-	GetWorld()->GetTimerManager().SetTimer(HUDToggleTimer, FTimerDelegate::CreateLambda
-	([this] 
+			SNew(SButton).OnClicked(FOnClicked::CreateUObject(this, &AMyGameMode::ButtonClicked))
+			.Content()
+			[
+				SAssignNew(ButtonLabel, STextBlock).Text(FText::FromString(TEXT("Click me!")))
+			]
+		];
+
+	if (GEngine)
 	{
-		if (this->Widget->GetVisibility().IsVisible())
-		{
-			this->Widget->SetVisibility(EVisibility::Hidden);
-		}
-		else
-		{
-			this->Widget->SetVisibility(EVisibility::Visible);
-		}
-	})
-	, 5, true);
+		GEngine->GameViewport->AddViewportWidgetForPlayer(GetWorld()->GetFirstLocalPlayerFromController(), Widget.ToSharedRef(), 1);
+	}
+	GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
+	if (GEngine)
+	{
+		GEngine->GetFirstLocalPlayerController(GetWorld())->SetInputMode(FInputModeUIOnly().SetLockMouseToViewport(false).SetWidgetToFocus(Widget));
+	}
 }
 
 void AMyGameMode::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -70,4 +67,34 @@ void AMyGameMode::FindActorsUsingInerface()
 
 }
 
+void AMyGameMode::createBlinkingButtion()
+{
+	Widget = SNew(SVerticalBox) + SVerticalBox::Slot().HAlign(HAlign_Center).VAlign(VAlign_Center)
+		[
+			SNew(SButton).Content()
+			[
+				SNew(STextBlock).Text(FText::FromString(TEXT("Test Button")))
+			]
+		];
+	GEngine->GameViewport->AddViewportWidgetForPlayer(GetWorld()->GetFirstLocalPlayerFromController(), Widget.ToSharedRef(), 1);
+	GetWorld()->GetTimerManager().SetTimer(HUDToggleTimer, FTimerDelegate::CreateLambda
+	([this]
+	{
+		if (this->Widget->GetVisibility().IsVisible())
+		{
+			this->Widget->SetVisibility(EVisibility::Hidden);
+		}
+		else
+		{
+			this->Widget->SetVisibility(EVisibility::Visible);
+		}
+	})
+		, 5, true);
+}
+
+FReply AMyGameMode::ButtonClicked()
+{
+	ButtonLabel->SetText(FString(TEXT("Clicked")));
+	return FReply::Handled();
+}
 

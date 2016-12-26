@@ -60,7 +60,7 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AClock::StaticClass(), "TimeChanged",(Native)&AClock::execTimeChanged);
 	}
-	IMPLEMENT_CLASS(AClock, 4261050983);
+	IMPLEMENT_CLASS(AClock, 4093512507);
 	void ITalker::StartTalking()
 	{
 		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_StartTalking instead.");
@@ -261,8 +261,9 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 	}
 	void AMyGameMode::StaticRegisterNativesAMyGameMode()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "createBlinkingButtion",(Native)&AMyGameMode::execcreateBlinkingButtion);
 	}
-	IMPLEMENT_CLASS(AMyGameMode, 3014843819);
+	IMPLEMENT_CLASS(AMyGameMode, 462465189);
 	void AMyInpulseActor::StaticRegisterNativesAMyInpulseActor()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AMyInpulseActor::StaticClass(), "Triggered",(Native)&AMyInpulseActor::execTriggered);
@@ -590,6 +591,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	TPT_API class UFunction* Z_Construct_UFunction_UTestInterface_ReactToMidnight();
 	TPT_API class UClass* Z_Construct_UClass_UTestInterface_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_UTestInterface();
+	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_createBlinkingButtion();
 	TPT_API class UClass* Z_Construct_UClass_AMyGameMode_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_AMyGameMode();
 	TPT_API class UFunction* Z_Construct_UFunction_AMyInpulseActor_Triggered();
@@ -1291,6 +1293,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_HourHandle = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("HourHandle"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(HourHandle, AClock), 0x001000000008000d, Z_Construct_UClass_USceneComponent_NoRegister());
 				UProperty* NewProp_ClockFace = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ClockFace"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ClockFace, AClock), 0x001000000008000d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_RootSceneComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("RootSceneComponent"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(RootSceneComponent, AClock), 0x0010000000080008, Z_Construct_UClass_USceneComponent_NoRegister());
+				UProperty* NewProp_PC = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("PC"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(PC, AClock), 0x0010000000000000, Z_Construct_UClass_ACharacter_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AClock_TimeChanged(), "TimeChanged"); // 1475726749
 				OuterClass->StaticLink();
@@ -1315,6 +1318,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_ClockFace, TEXT("ModuleRelativePath"), TEXT("Clock.h"));
 				MetaData->SetValue(NewProp_RootSceneComponent, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_RootSceneComponent, TEXT("ModuleRelativePath"), TEXT("Clock.h"));
+				MetaData->SetValue(NewProp_PC, TEXT("ModuleRelativePath"), TEXT("Clock.h"));
 #endif
 			}
 		}
@@ -2330,6 +2334,22 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTestInterface(Z_Construct_UClass_UTestInterface, &UTestInterface::StaticClass, TEXT("UTestInterface"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTestInterface);
+	UFunction* Z_Construct_UFunction_AMyGameMode_createBlinkingButtion()
+	{
+		UObject* Outer=Z_Construct_UClass_AMyGameMode();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("createBlinkingButtion"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MyGameMode.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AMyGameMode_NoRegister()
 	{
 		return AMyGameMode::StaticClass();
@@ -2347,6 +2367,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x2090028C;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_createBlinkingButtion());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_HUDToggleTimer = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("HUDToggleTimer"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(HUDToggleTimer, AMyGameMode), 0x0010000000000000, Z_Construct_UScriptStruct_FTimerHandle());
@@ -2356,6 +2377,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_defaultCharacterToSpawn = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("defaultCharacterToSpawn"), RF_Public|RF_Transient|RF_MarkAsNative) UClassProperty(CPP_PROPERTY_BASE(defaultCharacterToSpawn, AMyGameMode), 0x0014000000000005, Z_Construct_UClass_AWarrior_NoRegister(), UClass::StaticClass());
 				UProperty* NewProp_weaponToGenerate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("weaponToGenerate"), RF_Public|RF_Transient|RF_MarkAsNative) UClassProperty(CPP_PROPERTY_BASE(weaponToGenerate, AMyGameMode), 0x0014000000000005, Z_Construct_UClass_AWeapon_Base_NoRegister(), UClass::StaticClass());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_createBlinkingButtion(), "createBlinkingButtion"); // 1864206027
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -4394,8 +4416,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/TPT")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x01B4CD28;
-			Guid.B = 0xDDFE0116;
+			Guid.A = 0xF02C7E42;
+			Guid.B = 0xBD6E3C68;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

@@ -1,10 +1,9 @@
 {
-	"Changelist" : 3195953,
-	"CompatibleChangelist" : 0,
-	"BuildId" : "42281eac-93fe-4a84-9556-0f3431a63836",
+	"Changelist" : 3224400,
+	"CompatibleChangelist" : 3195953,
+	"BuildId" : "",
 	"Modules" : 
 	{
-		"TPT" : "UE4Editor-TPT-9726.dll",
-		"TPTEditor" : "UE4Editor-TPTEditor.dll"
+		"TPT" : "UE4Editor-TPT-5838.dll"
 	}
 }

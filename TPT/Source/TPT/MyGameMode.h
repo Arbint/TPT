@@ -50,6 +50,15 @@ public:
 
 	UPROPERTY()
 		FTimerHandle HUDToggleTimer;
-	
+
+
+	UFUNCTION()
+		void createBlinkingButtion();
+
+private:
 	TSharedPtr<SVerticalBox> Widget;
+	TSharedPtr<STextBlock> ButtonLabel;
+
+public:
+	FReply ButtonClicked();
 };
