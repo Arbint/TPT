@@ -522,6 +522,8 @@
 		<ClInclude Include="..\..\Source\TPT\Interactable\Openable.h" />
 		<ClCompile Include="..\..\Source\TPT\Interfaces\Talker.cpp" />
 		<ClInclude Include="..\..\Source\TPT\Interfaces\Talker.h" />
+		<ClCompile Include="..\..\Source\TPT\UI\CookbooStyle.cpp" />
+		<ClInclude Include="..\..\Source\TPT\UI\CookbooStyle.h" />
 		<None Include="..\..\Source\TPTEditor\TPTEditor.Build.cs" />
 		<ClCompile Include="..\..\Source\TPTEditor\TPTEditor.cpp" />
 		<ClInclude Include="..\..\Source\TPTEditor\TPTEditor.h" />

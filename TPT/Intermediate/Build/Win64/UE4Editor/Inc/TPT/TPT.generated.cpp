@@ -261,11 +261,12 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 	}
 	void AMyGameMode::StaticRegisterNativesAMyGameMode()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "CreateAButtonShowsPlayerPosition",(Native)&AMyGameMode::execCreateAButtonShowsPlayerPosition);
 		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "createBlinkingButtion",(Native)&AMyGameMode::execcreateBlinkingButtion);
 		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "createClickableButton",(Native)&AMyGameMode::execcreateClickableButton);
 		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "GetButtonLabel",(Native)&AMyGameMode::execGetButtonLabel);
 	}
-	IMPLEMENT_CLASS(AMyGameMode, 103085975);
+	IMPLEMENT_CLASS(AMyGameMode, 1354150953);
 	void AMyInpulseActor::StaticRegisterNativesAMyInpulseActor()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AMyInpulseActor::StaticClass(), "Triggered",(Native)&AMyInpulseActor::execTriggered);
@@ -593,6 +594,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	TPT_API class UFunction* Z_Construct_UFunction_UTestInterface_ReactToMidnight();
 	TPT_API class UClass* Z_Construct_UClass_UTestInterface_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_UTestInterface();
+	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_CreateAButtonShowsPlayerPosition();
 	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_createBlinkingButtion();
 	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_createClickableButton();
 	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_GetButtonLabel();
@@ -2338,6 +2340,22 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTestInterface(Z_Construct_UClass_UTestInterface, &UTestInterface::StaticClass, TEXT("UTestInterface"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTestInterface);
+	UFunction* Z_Construct_UFunction_AMyGameMode_CreateAButtonShowsPlayerPosition()
+	{
+		UObject* Outer=Z_Construct_UClass_AMyGameMode();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("CreateAButtonShowsPlayerPosition"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MyGameMode.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_AMyGameMode_createBlinkingButtion()
 	{
 		UObject* Outer=Z_Construct_UClass_AMyGameMode();
@@ -2350,6 +2368,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #if WITH_METADATA
 			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
 			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MyGameMode.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Multiple ways of creating buttons."));
 #endif
 		}
 		return ReturnFunction;
@@ -2408,6 +2427,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x2090028C;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_CreateAButtonShowsPlayerPosition());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_createBlinkingButtion());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_createClickableButton());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_GetButtonLabel());
@@ -2420,7 +2440,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_defaultCharacterToSpawn = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("defaultCharacterToSpawn"), RF_Public|RF_Transient|RF_MarkAsNative) UClassProperty(CPP_PROPERTY_BASE(defaultCharacterToSpawn, AMyGameMode), 0x0014000000000005, Z_Construct_UClass_AWarrior_NoRegister(), UClass::StaticClass());
 				UProperty* NewProp_weaponToGenerate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("weaponToGenerate"), RF_Public|RF_Transient|RF_MarkAsNative) UClassProperty(CPP_PROPERTY_BASE(weaponToGenerate, AMyGameMode), 0x0014000000000005, Z_Construct_UClass_AWeapon_Base_NoRegister(), UClass::StaticClass());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_createBlinkingButtion(), "createBlinkingButtion"); // 1864206027
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_CreateAButtonShowsPlayerPosition(), "CreateAButtonShowsPlayerPosition"); // 2875118568
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_createBlinkingButtion(), "createBlinkingButtion"); // 3053817176
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_createClickableButton(), "createClickableButton"); // 1653989716
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_GetButtonLabel(), "GetButtonLabel"); // 794466508
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
@@ -4461,8 +4482,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/TPT")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xF675D5F7;
-			Guid.B = 0x597ADFE2;
+			Guid.A = 0xDCB472FB;
+			Guid.B = 0xDD86FD07;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

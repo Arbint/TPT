@@ -49,6 +49,7 @@
 #include "D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPT\TPTGameMode.cpp"
 #include "D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPT\Tree.cpp"
 #include "D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPT\TriggerActor.cpp"
+#include "D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPT\UI\CookbooStyle.cpp"
 #include "D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPT\UniversalFunctions.cpp"
 #include "D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPT\Warrior.cpp"
 #include "D:\Learnning\UE4\ThridPersonTest\git\TPT\TPT\Source\TPT\Weapon_Base.cpp"

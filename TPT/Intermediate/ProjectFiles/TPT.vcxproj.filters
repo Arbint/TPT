@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\TPT.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{4A2BD8D3-8EA2-4C78-AA8B-B53C3DB34F75}</UniqueIdentifier>
+			<UniqueIdentifier>{F5236435-7DB1-41BF-881C-7B1CAB9688A0}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\TPT.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{5EC0542A-C1B3-4473-A4A4-327E469DAE3D}</UniqueIdentifier>
+			<UniqueIdentifier>{C0930CFC-DBC9-4333-A76A-B8D443803EBB}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -31,7 +31,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\TPT">
-			<UniqueIdentifier>{4788E521-C721-41C2-874A-8FF5E7B11629}</UniqueIdentifier>
+			<UniqueIdentifier>{90137C04-3278-4269-A9BA-D8205038F45F}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\TPT\AntiGravityVolume.cpp">
 			<Filter>Source\TPT</Filter>
@@ -265,7 +265,7 @@
 			<Filter>Source\TPT</Filter>
 		</ClInclude >
 		<Filter Include="Source\TPT\Chap8">
-			<UniqueIdentifier>{CE0A3AB3-89A3-41AA-934E-6FF781C49B61}</UniqueIdentifier>
+			<UniqueIdentifier>{F99395CC-C80A-40E8-943E-3C266074A603}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\TPT\Chap8\BaseEnemy.cpp">
 			<Filter>Source\TPT\Chap8</Filter>
@@ -334,7 +334,7 @@
 			<Filter>Source\TPT\Chap8</Filter>
 		</ClInclude >
 		<Filter Include="Source\TPT\experimental">
-			<UniqueIdentifier>{4F6B6BE5-41F1-4B26-89B5-BA03E3B8EE8C}</UniqueIdentifier>
+			<UniqueIdentifier>{23337E45-082E-4FDD-B88A-EFE343D658D2}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\TPT\experimental\MyInpulseActor.cpp">
 			<Filter>Source\TPT\experimental</Filter>
@@ -343,7 +343,7 @@
 			<Filter>Source\TPT\experimental</Filter>
 		</ClInclude >
 		<Filter Include="Source\TPT\Interactable">
-			<UniqueIdentifier>{391BAB66-F368-45FE-BC3F-341A5A952532}</UniqueIdentifier>
+			<UniqueIdentifier>{8E19B83F-D221-4202-BCCA-082303E95BEE}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\TPT\Interactable\IFInteractable.cpp">
 			<Filter>Source\TPT\Interactable</Filter>
@@ -358,7 +358,7 @@
 			<Filter>Source\TPT\Interactable</Filter>
 		</ClInclude >
 		<Filter Include="Source\TPT\Interfaces">
-			<UniqueIdentifier>{1604B03B-AC56-4C61-BFC9-7E5CCD090182}</UniqueIdentifier>
+			<UniqueIdentifier>{D243A55C-B9ED-4F45-99A7-1CC281AD3E3B}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\TPT\Interfaces\Talker.cpp">
 			<Filter>Source\TPT\Interfaces</Filter>
@@ -366,8 +366,17 @@
 		<ClInclude Include="..\..\Source\TPT\Interfaces\Talker.h">
 			<Filter>Source\TPT\Interfaces</Filter>
 		</ClInclude >
+		<Filter Include="Source\TPT\UI">
+			<UniqueIdentifier>{AE32DC71-7364-4156-BE26-902A3AA32657}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\TPT\UI\CookbooStyle.cpp">
+			<Filter>Source\TPT\UI</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\TPT\UI\CookbooStyle.h">
+			<Filter>Source\TPT\UI</Filter>
+		</ClInclude >
 		<Filter Include="Source\TPTEditor">
-			<UniqueIdentifier>{6906715D-BA72-45F8-991B-75DB6B770D0F}</UniqueIdentifier>
+			<UniqueIdentifier>{BEB8C36A-26A3-4533-AFBD-2C049CA57223}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\TPTEditor\TPTEditor.Build.cs">
 			<Filter>Source\TPTEditor</Filter>

@@ -13,6 +13,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define TPT_Source_TPT_MyGameMode_h_25_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execCreateAButtonShowsPlayerPosition) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->CreateAButtonShowsPlayerPosition(); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execGetButtonLabel) \
 	{ \
 		P_FINISH; \
@@ -39,6 +47,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define TPT_Source_TPT_MyGameMode_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execCreateAButtonShowsPlayerPosition) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->CreateAButtonShowsPlayerPosition(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execGetButtonLabel) \
 	{ \

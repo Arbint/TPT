@@ -8,6 +8,7 @@
 #include "CustomHud.h"
 #include "MyGameMode.h"
 #include "C_PlayerController.h"
+#include "UI/CookbooStyle.h"
 
 
 
@@ -21,13 +22,27 @@ AMyGameMode::AMyGameMode()
 void AMyGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	CreateAButtonShowsPlayerPosition();
+	FCookbookStyle::Initialize();
+	Widget = SNew(SVerticalBox) + SVerticalBox::Slot().HAlign(HAlign_Center).VAlign(VAlign_Center)
+		[
+			SNew(SButton).ButtonStyle(FCookbookStyle::Get(), "NormalButtonBrush").ContentPadding(FMargin(16)).Content()
+			[
+				SNew(STextBlock)
+				.TextStyle(FCookbookStyle::Get(), "NormalButtonText")
+				.Text(FText::FromString("Styled Button"))
+			]
+		];
+	if (GEngine)
+	{
+		GEngine->GameViewport->AddViewportWidgetForPlayer(GetWorld()->GetFirstLocalPlayerFromController(), Widget.ToSharedRef(), 1);
+	}
 }
 
 void AMyGameMode::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
 	Super::EndPlay(EndPlayReason);
 	GetWorld()->GetTimerManager().ClearTimer(HUDToggleTimer);
+	FCookbookStyle::ShutDown();
 }
 
 void AMyGameMode::FindActorsUsingInerface()
