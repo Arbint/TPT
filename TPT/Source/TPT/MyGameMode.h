@@ -69,4 +69,6 @@ public:
 
 	UFUNCTION()
 		void CreateAButtonShowsPlayerPosition();
+	UFUNCTION()
+		void CreateStylizedButton();
 };
