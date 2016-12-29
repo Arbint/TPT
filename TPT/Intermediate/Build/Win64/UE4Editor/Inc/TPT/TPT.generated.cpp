@@ -37,6 +37,10 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 	{
 	}
 	IMPLEMENT_CLASS(ABlueprintPropertyActor, 2178834913);
+	void UBTTask_MoveToPlayer::StaticRegisterNativesUBTTask_MoveToPlayer()
+	{
+	}
+	IMPLEMENT_CLASS(UBTTask_MoveToPlayer, 1356927828);
 	void AC_PlayerController::StaticRegisterNativesAC_PlayerController()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AC_PlayerController::StaticClass(), "ChangeCharacter",(Native)&AC_PlayerController::execChangeCharacter);
@@ -56,11 +60,19 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 		FNativeFunctionRegistrar::RegisterFunction(AC_PlayerController::StaticClass(), "Sprint",(Native)&AC_PlayerController::execSprint);
 	}
 	IMPLEMENT_CLASS(AC_PlayerController, 4077417310);
+	void ACAIController::StaticRegisterNativesACAIController()
+	{
+	}
+	IMPLEMENT_CLASS(ACAIController, 2320984991);
 	void AClock::StaticRegisterNativesAClock()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AClock::StaticClass(), "TimeChanged",(Native)&AClock::execTimeChanged);
 	}
 	IMPLEMENT_CLASS(AClock, 4093512507);
+	void UCPathFollowingComponent::StaticRegisterNativesUCPathFollowingComponent()
+	{
+	}
+	IMPLEMENT_CLASS(UCPathFollowingComponent, 4237628026);
 	void ITalker::StartTalking()
 	{
 		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_StartTalking instead.");
@@ -183,6 +195,10 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 		FNativeFunctionRegistrar::RegisterFunction(AEventListener::StaticClass(), "OnTriggerEvent",(Native)&AEventListener::execOnTriggerEvent);
 	}
 	IMPLEMENT_CLASS(AEventListener, 3872335161);
+	void AFollowerCharacter::StaticRegisterNativesAFollowerCharacter()
+	{
+	}
+	IMPLEMENT_CLASS(AFollowerCharacter, 354452989);
 	void UGravityObject::StaticRegisterNativesUGravityObject()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(UGravityObject::StaticClass(), "DisableGravity",(Native)&IGravityObject::execDisableGravity);
@@ -214,6 +230,10 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 		FNativeFunctionRegistrar::RegisterFunction(AMulticastDelegateListener::StaticClass(), "ToggleLight",(Native)&AMulticastDelegateListener::execToggleLight);
 	}
 	IMPLEMENT_CLASS(AMulticastDelegateListener, 1621976545);
+	void UMyBTService_CheckForPlayer::StaticRegisterNativesUMyBTService_CheckForPlayer()
+	{
+	}
+	IMPLEMENT_CLASS(UMyBTService_CheckForPlayer, 2875079294);
 	bool ITestInterface::ReactToHighMoon()
 	{
 		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_ReactToHighMoon instead.");
@@ -264,9 +284,10 @@ FName TPT_StartTalking = FName(TEXT("StartTalking"));
 		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "CreateAButtonShowsPlayerPosition",(Native)&AMyGameMode::execCreateAButtonShowsPlayerPosition);
 		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "createBlinkingButtion",(Native)&AMyGameMode::execcreateBlinkingButtion);
 		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "createClickableButton",(Native)&AMyGameMode::execcreateClickableButton);
+		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "CreateStylizedButton",(Native)&AMyGameMode::execCreateStylizedButton);
 		FNativeFunctionRegistrar::RegisterFunction(AMyGameMode::StaticClass(), "GetButtonLabel",(Native)&AMyGameMode::execGetButtonLabel);
 	}
-	IMPLEMENT_CLASS(AMyGameMode, 1354150953);
+	IMPLEMENT_CLASS(AMyGameMode, 4270134833);
 	void AMyInpulseActor::StaticRegisterNativesAMyInpulseActor()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AMyInpulseActor::StaticClass(), "Triggered",(Native)&AMyInpulseActor::execTriggered);
@@ -454,6 +475,10 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 		FNativeFunctionRegistrar::RegisterFunction(ATriggerActor::StaticClass(), "NotifyActorBeginOverlap",(Native)&ATriggerActor::execNotifyActorBeginOverlap);
 	}
 	IMPLEMENT_CLASS(ATriggerActor, 1101048486);
+	void UUCustomButtonWidget::StaticRegisterNativesUUCustomButtonWidget()
+	{
+	}
+	IMPLEMENT_CLASS(UUCustomButtonWidget, 379285001);
 	void AWarrior::StaticRegisterNativesAWarrior()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AWarrior::StaticClass(), "CollideWithItem",(Native)&AWarrior::execCollideWithItem);
@@ -479,16 +504,24 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	ENGINE_API class UClass* Z_Construct_UClass_AStaticMeshActor();
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBTTask_BlackboardBase();
 	ENGINE_API class UClass* Z_Construct_UClass_ACharacter_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_APlayerController();
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
+	AIMODULE_API class UClass* Z_Construct_UClass_AAIController();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBehaviorTreeComponent_NoRegister();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBlackboardComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USceneComponent_NoRegister();
+	AIMODULE_API class UClass* Z_Construct_UClass_UPathFollowingComponent();
 	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
 	ENGINE_API class UEnum* Z_Construct_UEnum_Engine_EEndPlayReason();
 	ENGINE_API class UClass* Z_Construct_UClass_UPointLightComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FTransform();
 	ENGINE_API class UClass* Z_Construct_UClass_UActorComponent();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBTService();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FTimerHandle();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
@@ -503,11 +536,11 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	COREUOBJECT_API class UClass* Z_Construct_UClass_UObject();
 	ENGINE_API class UClass* Z_Construct_UClass_UTexture_NoRegister();
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FColor();
-	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FStringClassReference();
 	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameModeBase();
+	UMG_API class UClass* Z_Construct_UClass_UWidget();
 	ENGINE_API class UClass* Z_Construct_UClass_UDamageType_NoRegister();
 
 	TPT_API class UClass* Z_Construct_UClass_AAntiGravityVolume_NoRegister();
@@ -520,6 +553,8 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	TPT_API class UClass* Z_Construct_UClass_APostEditChangePropertyActor();
 	TPT_API class UClass* Z_Construct_UClass_ABlueprintPropertyActor_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_ABlueprintPropertyActor();
+	TPT_API class UClass* Z_Construct_UClass_UBTTask_MoveToPlayer_NoRegister();
+	TPT_API class UClass* Z_Construct_UClass_UBTTask_MoveToPlayer();
 	TPT_API class UFunction* Z_Construct_UFunction_AC_PlayerController_ChangeCharacter();
 	TPT_API class UFunction* Z_Construct_UFunction_AC_PlayerController_createButton();
 	TPT_API class UFunction* Z_Construct_UFunction_AC_PlayerController_Down();
@@ -537,9 +572,13 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	TPT_API class UFunction* Z_Construct_UFunction_AC_PlayerController_Sprint();
 	TPT_API class UClass* Z_Construct_UClass_AC_PlayerController_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_AC_PlayerController();
+	TPT_API class UClass* Z_Construct_UClass_ACAIController_NoRegister();
+	TPT_API class UClass* Z_Construct_UClass_ACAIController();
 	TPT_API class UFunction* Z_Construct_UFunction_AClock_TimeChanged();
 	TPT_API class UClass* Z_Construct_UClass_AClock_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_AClock();
+	TPT_API class UClass* Z_Construct_UClass_UCPathFollowingComponent_NoRegister();
+	TPT_API class UClass* Z_Construct_UClass_UCPathFollowingComponent();
 	TPT_API class UFunction* Z_Construct_UFunction_UTalker_StartTalking();
 	TPT_API class UClass* Z_Construct_UClass_UTalker_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_UTalker();
@@ -568,6 +607,8 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	TPT_API class UFunction* Z_Construct_UFunction_AEventListener_OnTriggerEvent();
 	TPT_API class UClass* Z_Construct_UClass_AEventListener_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_AEventListener();
+	TPT_API class UClass* Z_Construct_UClass_AFollowerCharacter_NoRegister();
+	TPT_API class UClass* Z_Construct_UClass_AFollowerCharacter();
 	TPT_API class UFunction* Z_Construct_UFunction_UGravityObject_DisableGravity();
 	TPT_API class UFunction* Z_Construct_UFunction_UGravityObject_EnableGravity();
 	TPT_API class UClass* Z_Construct_UClass_UGravityObject_NoRegister();
@@ -590,6 +631,8 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	TPT_API class UFunction* Z_Construct_UFunction_AMulticastDelegateListener_ToggleLight();
 	TPT_API class UClass* Z_Construct_UClass_AMulticastDelegateListener_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_AMulticastDelegateListener();
+	TPT_API class UClass* Z_Construct_UClass_UMyBTService_CheckForPlayer_NoRegister();
+	TPT_API class UClass* Z_Construct_UClass_UMyBTService_CheckForPlayer();
 	TPT_API class UFunction* Z_Construct_UFunction_UTestInterface_ReactToHighMoon();
 	TPT_API class UFunction* Z_Construct_UFunction_UTestInterface_ReactToMidnight();
 	TPT_API class UClass* Z_Construct_UClass_UTestInterface_NoRegister();
@@ -597,6 +640,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_CreateAButtonShowsPlayerPosition();
 	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_createBlinkingButtion();
 	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_createClickableButton();
+	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_CreateStylizedButton();
 	TPT_API class UFunction* Z_Construct_UFunction_AMyGameMode_GetButtonLabel();
 	TPT_API class UClass* Z_Construct_UClass_AMyGameMode_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_AMyGameMode();
@@ -679,6 +723,10 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_TreeType(TreeType_Static
 	TPT_API class UFunction* Z_Construct_UFunction_ATriggerActor_NotifyActorBeginOverlap();
 	TPT_API class UClass* Z_Construct_UClass_ATriggerActor_NoRegister();
 	TPT_API class UClass* Z_Construct_UClass_ATriggerActor();
+	TPT_API class UFunction* Z_Construct_UDelegateFunction_TPT_GetString__DelegateSignature();
+	TPT_API class UFunction* Z_Construct_UDelegateFunction_TPT_ButtonCliced__DelegateSignature();
+	TPT_API class UClass* Z_Construct_UClass_UUCustomButtonWidget_NoRegister();
+	TPT_API class UClass* Z_Construct_UClass_UUCustomButtonWidget();
 	TPT_API class UFunction* Z_Construct_UFunction_AWarrior_CollideWithItem();
 	TPT_API class UFunction* Z_Construct_UFunction_AWarrior_GetDirectionToPlayer();
 	TPT_API class UFunction* Z_Construct_UFunction_AWarrior_TryInteract();
@@ -887,6 +935,37 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABlueprintPropertyActor(Z_Construct_UClass_ABlueprintPropertyActor, &ABlueprintPropertyActor::StaticClass, TEXT("ABlueprintPropertyActor"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABlueprintPropertyActor);
+	UClass* Z_Construct_UClass_UBTTask_MoveToPlayer_NoRegister()
+	{
+		return UBTTask_MoveToPlayer::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UBTTask_MoveToPlayer()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UBTTask_BlackboardBase();
+			Z_Construct_UPackage__Script_TPT();
+			OuterClass = UBTTask_MoveToPlayer::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20100080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("BTTask_MoveToPlayer.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("BTTask_MoveToPlayer.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UBTTask_MoveToPlayer(Z_Construct_UClass_UBTTask_MoveToPlayer, &UBTTask_MoveToPlayer::StaticClass, TEXT("UBTTask_MoveToPlayer"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(UBTTask_MoveToPlayer);
 	UFunction* Z_Construct_UFunction_AC_PlayerController_ChangeCharacter()
 	{
 		UObject* Outer=Z_Construct_UClass_AC_PlayerController();
@@ -1250,6 +1329,47 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AC_PlayerController(Z_Construct_UClass_AC_PlayerController, &AC_PlayerController::StaticClass, TEXT("AC_PlayerController"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AC_PlayerController);
+	UClass* Z_Construct_UClass_ACAIController_NoRegister()
+	{
+		return ACAIController::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ACAIController()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AAIController();
+			Z_Construct_UPackage__Script_TPT();
+			OuterClass = ACAIController::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900280;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_BehaviorComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BehaviorComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(BehaviorComp, ACAIController), 0x0020080000082008, Z_Construct_UClass_UBehaviorTreeComponent_NoRegister());
+				UProperty* NewProp_BlackboardComp = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BlackboardComp"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(BlackboardComp, ACAIController), 0x0020080000082008, Z_Construct_UClass_UBlackboardComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Rendering Utilities|Transformation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("CAIController.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("CAIController.h"));
+				MetaData->SetValue(OuterClass, TEXT("ObjectInitializerConstructorDeclared"), TEXT(""));
+				MetaData->SetValue(NewProp_BehaviorComp, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_BehaviorComp, TEXT("ModuleRelativePath"), TEXT("CAIController.h"));
+				MetaData->SetValue(NewProp_BlackboardComp, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_BlackboardComp, TEXT("ModuleRelativePath"), TEXT("CAIController.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ACAIController(Z_Construct_UClass_ACAIController, &ACAIController::StaticClass, TEXT("ACAIController"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ACAIController);
 	UFunction* Z_Construct_UFunction_AClock_TimeChanged()
 	{
 		struct Clock_eventTimeChanged_Parms
@@ -1333,6 +1453,37 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AClock(Z_Construct_UClass_AClock, &AClock::StaticClass, TEXT("AClock"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AClock);
+	UClass* Z_Construct_UClass_UCPathFollowingComponent_NoRegister()
+	{
+		return UCPathFollowingComponent::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UCPathFollowingComponent()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UPathFollowingComponent();
+			Z_Construct_UPackage__Script_TPT();
+			OuterClass = UCPathFollowingComponent::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20B00080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("CPathFollowingComponent.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("CPathFollowingComponent.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UCPathFollowingComponent(Z_Construct_UClass_UCPathFollowingComponent, &UCPathFollowingComponent::StaticClass, TEXT("UCPathFollowingComponent"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(UCPathFollowingComponent);
 	UFunction* Z_Construct_UFunction_UTalker_StartTalking()
 	{
 		UObject* Outer=Z_Construct_UClass_UTalker();
@@ -1838,6 +1989,43 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AEventListener(Z_Construct_UClass_AEventListener, &AEventListener::StaticClass, TEXT("AEventListener"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AEventListener);
+	UClass* Z_Construct_UClass_AFollowerCharacter_NoRegister()
+	{
+		return AFollowerCharacter::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AFollowerCharacter()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_ACharacter();
+			Z_Construct_UPackage__Script_TPT();
+			OuterClass = AFollowerCharacter::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_BotBehavior = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("BotBehavior"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(BotBehavior, AFollowerCharacter), 0x0010000000000001, Z_Construct_UClass_UBehaviorTree_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("FollowerCharacter.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("FollowerCharacter.h"));
+				MetaData->SetValue(NewProp_BotBehavior, TEXT("Category"), TEXT("Behavior"));
+				MetaData->SetValue(NewProp_BotBehavior, TEXT("ModuleRelativePath"), TEXT("FollowerCharacter.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AFollowerCharacter(Z_Construct_UClass_AFollowerCharacter, &AFollowerCharacter::StaticClass, TEXT("AFollowerCharacter"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFollowerCharacter);
 	UFunction* Z_Construct_UFunction_UGravityObject_DisableGravity()
 	{
 		UObject* Outer=Z_Construct_UClass_UGravityObject();
@@ -2266,6 +2454,37 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AMulticastDelegateListener(Z_Construct_UClass_AMulticastDelegateListener, &AMulticastDelegateListener::StaticClass, TEXT("AMulticastDelegateListener"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMulticastDelegateListener);
+	UClass* Z_Construct_UClass_UMyBTService_CheckForPlayer_NoRegister()
+	{
+		return UMyBTService_CheckForPlayer::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UMyBTService_CheckForPlayer()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UBTService();
+			Z_Construct_UPackage__Script_TPT();
+			OuterClass = UMyBTService_CheckForPlayer::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20100080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("MyBTService_CheckForPlayer.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("MyBTService_CheckForPlayer.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UMyBTService_CheckForPlayer(Z_Construct_UClass_UMyBTService_CheckForPlayer, &UMyBTService_CheckForPlayer::StaticClass, TEXT("UMyBTService_CheckForPlayer"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(UMyBTService_CheckForPlayer);
 	UFunction* Z_Construct_UFunction_UTestInterface_ReactToHighMoon()
 	{
 		UObject* Outer=Z_Construct_UClass_UTestInterface();
@@ -2389,6 +2608,22 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_AMyGameMode_CreateStylizedButton()
+	{
+		UObject* Outer=Z_Construct_UClass_AMyGameMode();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("CreateStylizedButton"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MyGameMode.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_AMyGameMode_GetButtonLabel()
 	{
 		struct MyGameMode_eventGetButtonLabel_Parms
@@ -2430,6 +2665,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_CreateAButtonShowsPlayerPosition());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_createBlinkingButtion());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_createClickableButton());
+				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_CreateStylizedButton());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMyGameMode_GetButtonLabel());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
@@ -2443,6 +2679,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_CreateAButtonShowsPlayerPosition(), "CreateAButtonShowsPlayerPosition"); // 2875118568
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_createBlinkingButtion(), "createBlinkingButtion"); // 3053817176
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_createClickableButton(), "createClickableButton"); // 1653989716
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_CreateStylizedButton(), "CreateStylizedButton"); // 3518133913
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMyGameMode_GetButtonLabel(), "GetButtonLabel"); // 794466508
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				OuterClass->StaticLink();
@@ -4195,6 +4432,83 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATriggerActor(Z_Construct_UClass_ATriggerActor, &ATriggerActor::StaticClass, TEXT("ATriggerActor"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATriggerActor);
+	UFunction* Z_Construct_UDelegateFunction_TPT_GetString__DelegateSignature()
+	{
+		struct _Script_TPT_eventGetString_Parms
+		{
+			FString ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UPackage__Script_TPT();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetString__DelegateSignature"), RF_Public|RF_Transient|RF_MarkAsNative) UDelegateFunction(FObjectInitializer(), NULL, 0x00120000, 65535, sizeof(_Script_TPT_eventGetString_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(ReturnValue, _Script_TPT_eventGetString_Parms), 0x0010000000000580);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UCustomButtonWidget.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UDelegateFunction_TPT_ButtonCliced__DelegateSignature()
+	{
+		UObject* Outer=Z_Construct_UPackage__Script_TPT();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("ButtonCliced__DelegateSignature"), RF_Public|RF_Transient|RF_MarkAsNative) UDelegateFunction(FObjectInitializer(), NULL, 0x00130000, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UCustomButtonWidget.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_UUCustomButtonWidget_NoRegister()
+	{
+		return UUCustomButtonWidget::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UUCustomButtonWidget()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UWidget();
+			Z_Construct_UPackage__Script_TPT();
+			OuterClass = UUCustomButtonWidget::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_LabelDelegate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LabelDelegate"), RF_Public|RF_Transient|RF_MarkAsNative) UDelegateProperty(CPP_PROPERTY_BASE(LabelDelegate, UUCustomButtonWidget), 0x0010000000080000, Z_Construct_UDelegateFunction_TPT_GetString__DelegateSignature());
+				UProperty* NewProp_Label = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Label"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(Label, UUCustomButtonWidget), 0x0010000000000005);
+				UProperty* NewProp_ButtonClicked = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ButtonClicked"), RF_Public|RF_Transient|RF_MarkAsNative) UMulticastDelegateProperty(CPP_PROPERTY_BASE(ButtonClicked, UUCustomButtonWidget), 0x0010000010080000, Z_Construct_UDelegateFunction_TPT_ButtonCliced__DelegateSignature());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UCustomButtonWidget.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UCustomButtonWidget.h"));
+				MetaData->SetValue(NewProp_LabelDelegate, TEXT("ModuleRelativePath"), TEXT("UCustomButtonWidget.h"));
+				MetaData->SetValue(NewProp_Label, TEXT("Category"), TEXT("UCustomButtonWidget"));
+				MetaData->SetValue(NewProp_Label, TEXT("ModuleRelativePath"), TEXT("UCustomButtonWidget.h"));
+				MetaData->SetValue(NewProp_ButtonClicked, TEXT("ModuleRelativePath"), TEXT("UCustomButtonWidget.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UUCustomButtonWidget(Z_Construct_UClass_UUCustomButtonWidget, &UUCustomButtonWidget::StaticClass, TEXT("UUCustomButtonWidget"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(UUCustomButtonWidget);
 	UFunction* Z_Construct_UFunction_AWarrior_CollideWithItem()
 	{
 		struct Warrior_eventCollideWithItem_Parms
@@ -4482,13 +4796,15 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/TPT")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xDCB472FB;
-			Guid.B = 0xDD86FD07;
+			Guid.A = 0x2F99CA0B;
+			Guid.B = 0x40A4FB20;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
 
 			Z_Construct_UDelegateFunction_TPT_OnKingDeathSignature__DelegateSignature();
+			Z_Construct_UDelegateFunction_TPT_ButtonCliced__DelegateSignature();
+			Z_Construct_UDelegateFunction_TPT_GetString__DelegateSignature();
 		}
 		return ReturnPackage;
 	}

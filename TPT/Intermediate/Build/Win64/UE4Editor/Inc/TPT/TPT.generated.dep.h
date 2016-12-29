@@ -20,11 +20,20 @@
 #ifndef TPT_BlueprintPropertyActor_generated_h
 	#include "Chap8/BlueprintPropertyActor.h"
 #endif
+#ifndef TPT_BTTask_MoveToPlayer_generated_h
+	#include "BTTask_MoveToPlayer.h"
+#endif
 #ifndef TPT_C_PlayerController_generated_h
 	#include "C_PlayerController.h"
 #endif
+#ifndef TPT_CAIController_generated_h
+	#include "CAIController.h"
+#endif
 #ifndef TPT_Clock_generated_h
 	#include "Clock.h"
+#endif
+#ifndef TPT_CPathFollowingComponent_generated_h
+	#include "CPathFollowingComponent.h"
 #endif
 #ifndef TPT_Talker_generated_h
 	#include "Interfaces/Talker.h"
@@ -53,6 +62,9 @@
 #ifndef TPT_EventListener_generated_h
 	#include "EventListener.h"
 #endif
+#ifndef TPT_FollowerCharacter_generated_h
+	#include "FollowerCharacter.h"
+#endif
 #ifndef TPT_GravityObject_generated_h
 	#include "GravityObject.h"
 #endif
@@ -67,6 +79,9 @@
 #endif
 #ifndef TPT_MulticastDelegateListener_generated_h
 	#include "MulticastDelegateListener.h"
+#endif
+#ifndef TPT_MyBTService_CheckForPlayer_generated_h
+	#include "MyBTService_CheckForPlayer.h"
 #endif
 #ifndef TPT_TestInterface_generated_h
 	#include "TestInterface.h"
@@ -148,6 +163,9 @@
 #endif
 #ifndef TPT_TriggerActor_generated_h
 	#include "TriggerActor.h"
+#endif
+#ifndef TPT_UCustomButtonWidget_generated_h
+	#include "UCustomButtonWidget.h"
 #endif
 #ifndef TPT_Warrior_generated_h
 	#include "Warrior.h"

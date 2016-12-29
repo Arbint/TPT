@@ -100,7 +100,6 @@ void AC_PlayerController::Down(float DownAmount)
 
 void AC_PlayerController::ChangeCharacter()
 {
-	AWarrior* NewWorriedToPosses = GetWorld()->SpawnActor<AWarrior>(AWarrior::StaticClass());
 	if (PossessedWorrior)
 	{
 		int warriorAmount = warriorTemplates.Num();

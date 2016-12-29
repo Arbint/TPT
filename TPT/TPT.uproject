@@ -4,21 +4,22 @@
 	"Category": "",
 	"Description": "",
 	"Modules": [
-    {
-      "Name": "TPT",
-      "Type": "Runtime",
-      "LoadingPhase": "Default",
-      "AdditionalDependencies": [
-        "Engine",
-        "CoreUObject"
-      ]
-    },
-    {
-
-      "Name": "TPTEditor",
-      "Type": "Editor",
-      "LoadingPhase": "PostEngineInit"
-    }
+		{
+			"Name": "TPT",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"CoreUObject",
+				"UMG",
+				"AIModule"
+			]
+		},
+		{
+			"Name": "TPTEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		}
 	],
 	"Plugins": [
 		{

@@ -2,7 +2,7 @@
 	"TargetName" : "TPTEditor",
 	"Platform" : "Win64",
 	"Configuration" : "Development",
-	"BuildId" : "7640d723-6a8f-4b26-9545-d5724b5bd528",
+	"BuildId" : "2b752703-e7e1-4b32-ad32-90d12256d426",
 	"Version" : 
 	{
 		"MajorVersion" : 4,
@@ -16,27 +16,27 @@
 	"BuildProducts" :
 	[
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-TPT.dll",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-TPT-468.dll",
 			"Type" : "DynamicLibrary"
 		},
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-TPT.pdb",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-TPT-468.pdb",
 			"Type" : "SymbolFile"
 		},
 		{
-			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-TPT.lib",
+			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-TPT-468.lib",
 			"Type" : "ImportLibrary"
 		},
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-TPTEditor.dll",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-TPTEditor-2182.dll",
 			"Type" : "DynamicLibrary"
 		},
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-TPTEditor.pdb",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-TPTEditor-2182.pdb",
 			"Type" : "SymbolFile"
 		},
 		{
-			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-TPTEditor.lib",
+			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-TPTEditor-2182.lib",
 			"Type" : "ImportLibrary"
 		}
 	],
